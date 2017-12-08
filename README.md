@@ -10,7 +10,7 @@ class Program
         {
             IEventBus eventBus = new EventBus();
 
-            eventBus.Subscribe<TestEvent>(EventRecieved, 5);
+            eventBus.Subscribe<TestEvent>(EventReceived, 5);
 
             for (int i = 0; i < 5; i++)
             {
@@ -21,7 +21,7 @@ class Program
             Console.ReadLine();
         }
 
-        private static void EventRecieved(TestEvent evt)
+        private static void EventReceived(TestEvent evt)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -31,3 +31,4 @@ class Program
         }
     }
 ```
+Subscribe to a message type, passing the function that's going to process that message and also the number of threads that will be used to process incoming events.
